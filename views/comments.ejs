@@ -1,0 +1,16 @@
+<%- include('header') -%>
+    <div class="jumbotron">
+        <h1>User Profile</h1>
+
+    </div>
+    <ol>
+      <% for(i = 0; i<comments.length; i++){  %>
+        <li>
+              <%= comments[i].data1 %>
+              <%= comments[i].data2 %>
+              <%= comments[i].data3 %>
+              <%= comments[i].data4 %>
+        </li>
+    <% } %>
+  </ol>
+<%- include('footer') -%>
