@@ -1,0 +1,48 @@
+<%- include('header') -%>
+<%- include('menubar') -%>
+
+<div class="jumbotron">
+    <h1>My Profile</h1>
+    <p>Please enter your personal information below</p>
+</div>
+
+<form method="post" action="/processform">
+
+  <table class="Profile Tabe">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Category</th>
+      <th scope="col">Input area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>How much water(ML) you prefer drink whole day</td>
+      <td><input type="text" name="data1"> <br></td>
+
+
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Weight(Kg)</td>
+      <td><input type="text" name="data2"> <br></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Calories you average take per day(kcal)</td>
+      <td><input type="text" name="data3"> <br></td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Personal Goal</td>
+      <td><textarea name="data4"></textarea></td>
+    </tr>
+  </tbody>
+</table>
+  <button type="submit" class="btn btn-primary my-1">Submit</button>
+</form>
+</form>
+
+<%- include('footer') -%>

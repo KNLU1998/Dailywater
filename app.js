@@ -7,6 +7,16 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+const mongoose = require( 'mongoose' );
+mongoose.connect( 'mongodb://localhost/user' );
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("we are connected!")
+}); //code to connect with mongoose
+
+const commentController = require('./controllers/commentcontroller.js')
+
 var app = express();
 
 // view engine setup
@@ -49,7 +59,11 @@ function processFormData(req,res,next){
      {title:"Form Data",url:req.body.url, coms:req.body.theComments});
 }
 
-app.post('/processform', processFormData);
+
+app.post('/processform',commentController.saveComments)
+
+app.get('/showComments',commentController.getAllComments)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
