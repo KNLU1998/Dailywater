@@ -8,10 +8,6 @@ exports.saveComments = ( req, res ) => {
   //console.dir(req)
   let newComment = new Comment(
     {
-<<<<<<< HEAD
-    name: req.body.name,
-=======
->>>>>>> dc733259e99ba3faa18c30556589e24a6faa70e8
     data1: req.body.data1,
     data2: req.body.data2,
     data3: req.body.data3,
@@ -47,26 +43,3 @@ exports.getAllComments = ( req, res ) => {
       //console.log( 'skill promise complete' );
     } );
 };
-<<<<<<< HEAD
-
-exports.getOneComments = ( req, res ) => {
-  //gconsle.log('in getAllSkills')
-  const id = req.params.id
-  console.log('the id is'+id)
-  Comment.findOne({_id:id} )
-    .exec()
-    .then( ( comment ) => {
-      res.render( 'comment', {
-        comment: comment
-      } );
-    } )
-    .catch( ( error ) => {
-      console.log( error.message );
-      return [];
-    } )
-    .then( () => {
-      //console.log( 'skill promise complete' );
-    } );
-};
-=======
->>>>>>> dc733259e99ba3faa18c30556589e24a6faa70e8

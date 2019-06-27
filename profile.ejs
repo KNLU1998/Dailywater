@@ -2,21 +2,12 @@
 <%- include('menubar') -%>
 
 <div class="jumbotron">
-    <h1>Dailywater Profile for <%= user.userName %></h1>
-    <p> Welcome <%= user.googlename %>
-        with email <%= user.googleemail %>
-        You are logged in to Dailywater.
-      </p>
-      <p> <%= user.zipcode %> <%= user.city %> <%= user.state %>
-        </p>
-    <p>Last updated on <%= user.lastUpdat %> </p>
-    <a href="/editProfile">edit profile</a>
-
-<<<<<<< HEAD
+    <h1>My Profile</h1>
+    <p>Please enter your personal information below</p>
 </div>
 
+<form method="post" action="/processform">
 
-=======
   <table class="Profile Tabe">
   <thead>
     <tr>
@@ -53,6 +44,5 @@
   <button type="submit" class="btn btn-primary my-1">Submit</button>
 </form>
 </form>
->>>>>>> dc733259e99ba3faa18c30556589e24a6faa70e8
 
 <%- include('footer') -%>
