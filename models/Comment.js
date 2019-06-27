@@ -1,0 +1,14 @@
+'use strict';
+const mongoose = require( 'mongoose' );
+const Schema = mongoose.Schema;
+
+var Comment = Schema( {
+  name: String,
+  data1: Number,
+  data2: Number,
+  data3: Number,
+  data4: String,
+
+} );
+
+module.exports = mongoose.model( 'comment', Comment );

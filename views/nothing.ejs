@@ -2,15 +2,12 @@
 <%- include('menubar') -%>
 
 <div class="jumbotron">
-    <h1>Dailywater Profile for <%= user.userName %></h1>
+    <h1>My Profile</h1>
     <p> Welcome <%= user.googlename %>
         with email <%= user.googleemail %>
         You are logged in to Dailywater.
       </p>
-      <p> <%= user.zipcode %> <%= user.city %> <%= user.state %>
-        </p>
     <p>Last updated on <%= user.lastUpdat %> </p>
-    <a href="/editProfile">edit profile</a>
 
 </div>
 

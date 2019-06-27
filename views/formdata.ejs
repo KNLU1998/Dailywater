@@ -1,7 +1,7 @@
 <%- include('header') -%>
 <%- include('menubar') -%>
     <div class="jumbotron">
-        <h1>Your Profile</h1>
+        <h1>Your personal info and goal</h1>
         <p> We will help you make the optimal water plan based on your profile</p>
     </div>
 
@@ -18,25 +18,32 @@
     <tbody>
       <tr>
         <th scope="row">1</th>
-        <td>The volumn of water you prefer drink a day</td>
-        <td><%= url  %></td>
+        <td>Name</td>
+        <td><%= name %></td>
 
 
       </tr>
       <tr>
         <th scope="row">2</th>
-        <td>Your Weight</td>
-        <td><%= url  %></td>
+        <td>The volumn of water you prefer drink a day</td>
+        <td><%= data1  %></td>
+
+
       </tr>
       <tr>
         <th scope="row">3</th>
-        <td>Calories you average take per day</td>
-        <td><%= url  %></td>
+        <td>Your Weight</td>
+        <td><%= data2 %></td>
       </tr>
       <tr>
         <th scope="row">4</th>
+        <td>Calories you average take per day</td>
+        <td><%= data3  %></td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
         <td>Your personal goal</td>
-        <td><%= coms  %></td>
+        <td><%= data4  %></td>
       </tr>
     </tbody>
   </table>
