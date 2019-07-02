@@ -8,10 +8,7 @@ exports.saveComments = ( req, res ) => {
   //console.dir(req)
   let newComment = new Comment(
     {
-<<<<<<< HEAD
     name: req.body.name,
-=======
->>>>>>> dc733259e99ba3faa18c30556589e24a6faa70e8
     data1: req.body.data1,
     data2: req.body.data2,
     data3: req.body.data3,
@@ -47,7 +44,6 @@ exports.getAllComments = ( req, res ) => {
       //console.log( 'skill promise complete' );
     } );
 };
-<<<<<<< HEAD
 
 exports.getOneComments = ( req, res ) => {
   //gconsle.log('in getAllSkills')
@@ -68,5 +64,3 @@ exports.getOneComments = ( req, res ) => {
       //console.log( 'skill promise complete' );
     } );
 };
-=======
->>>>>>> dc733259e99ba3faa18c30556589e24a6faa70e8

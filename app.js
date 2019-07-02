@@ -23,7 +23,6 @@ db.once('open', function() {
   console.log("we are connected!")
 }); //code to connect with mongoose
 
-<<<<<<< HEAD
 const commentController = require('./controllers/commentController.js')
 const profileController = require('./controllers/profileController.js')
 
@@ -34,9 +33,6 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const passport = require('passport')
 const configPassport = require('./config/passport')
 configPassport(passport)
-=======
-const commentController = require('./controllers/commentcontroller.js')
->>>>>>> dc733259e99ba3faa18c30556589e24a6faa70e8
 
 var app = express();
 
@@ -213,10 +209,9 @@ app.post('/processform',commentController.saveComments)
 
 app.get('/showComments',commentController.getAllComments)
 
-<<<<<<< HEAD
 app.get('/showComment/:id',commentController.getAllComments)
-=======
->>>>>>> dc733259e99ba3faa18c30556589e24a6faa70e8
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
