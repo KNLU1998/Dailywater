@@ -1,0 +1,67 @@
+<%- include('header') -%>
+<%- include('menubar') -%>
+
+    <div class="jumbotron" style="text-align:center;">
+        <h1>All history data for <%= user.userName %></h1>
+
+    <ol>
+
+      <div class="row">
+
+        <div class="col-md-3">
+          <h4>Date</h4>
+        </div>
+
+        <div class="col-md-3">
+          <h4>Sleep Duration</h4>
+        </div>
+
+        <div class="col-md-3">
+          <h4>Beginning Time</h4>
+        </div>
+
+        <div class="col-md-3">
+          <h4>Ending Time</h4>
+        </div>
+
+      </div>
+
+
+    <% for(i = 0; i<timeRecording.length; i++){ console.log("i="+i); console.dir(timeRecording[i].startAt) %>
+       <% if (timeRecording[i].startAt!=null&& timeRecording[i].endAt!=null) {%>
+          <div class="row">
+
+            <div class="col-md-3">
+              <h4><%= timeRecording[i].startAt.toLocaleDateString()%> </h4>
+            </div>
+
+            <div class="col-md-3">
+              <p><%=((timeRecording[i].endAt.getTime()-timeRecording[i].startAt.getTime())/(1000*60*60)).toFixed(3)%> hours </p>
+            </div>
+
+            <div class="col-md-3">
+              <p>From <%= timeRecording[i].startAt.toLocaleTimeString() %> </p>
+            </div>
+
+            <div class="col-md-3">
+              <p>To <%= timeRecording[i].endAt.toLocaleTimeString() %> </p>
+            </div>
+
+          </div>
+          <% if (i<timeRecording.length-1) { %>
+          <% if (timeRecording[i].endAt.toLocaleDateString()!= timeRecording[i+1].endAt.toLocaleDateString()) {%>
+            <br>
+          <%}%>
+            <%}%>
+      <% } %>
+    <% } %>
+    </ol>
+  </div>
+  <style>
+  .jumbotron {
+     /*background: rgb(200, 54, 54); /* This is for ie8 and below */
+     background: rgba(255, 255, 255, 0.2);*/
+  }
+  </style>
+
+<%- include('footer') -%>

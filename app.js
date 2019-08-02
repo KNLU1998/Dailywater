@@ -25,6 +25,8 @@ db.once('open', function() {
 
 const commentController = require('./controllers/commentController.js')
 const profileController = require('./controllers/profileController.js')
+const calendarController = require('./controllers/calendarController')
+const timeRecordingController = require('./controllers/timeRecordingController')
 
 // Authentication
 // Authentication
@@ -180,6 +182,9 @@ app.get('/', function(req, res, next) {
   res.render('index',{title:"Dailywater"});
 });
 
+app.get('/dashboard', function(req,res){
+  res.render('dashboard'),{title:"dashboard"}
+});
 
 app.get('/profile', function(req, res, next) {
   res.render('profile',{title:"profile"});
@@ -211,6 +216,31 @@ app.get('/showComments',commentController.getAllComments)
 
 app.get('/showComment/:id',commentController.getAllComments)
 
+app.get('/calendar',
+  function(req,res){
+     res.render('calendar',{})
+})
+
+app.get('/suggestions',
+  function(req,res){
+     res.render('suggestions',{})
+})
+
+app.get('/historyData',
+   isLoggedIn,
+   (req,res)=>{
+       res.render('historyData')
+})
+
+app.post('/processStart',timeRecordingController.saveStartTime)
+
+app.post('/processEnd',timeRecordingController.saveEndTime)
+
+app.get('/timeResult', timeRecordingController.getTimeRecording)
+
+app.get('/timeRecording', (req, res) => {
+  res.render('timeRecording',{title:"timeRecording"});
+});
 
 
 // catch 404 and forward to error handler
